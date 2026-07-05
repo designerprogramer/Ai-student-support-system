@@ -1,0 +1,1321 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$K8hceKdMJcKrrAjNnFiSJ2$qmVbwOwIDWOnBChlfoyj30CgcNS5eiDHm3e1GeEGo+o=",
+    "last_login": "2026-05-21T08:13:41.291Z",
+    "is_superuser": true,
+    "username": "xasan",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-05-12T14:44:09.774Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$45qUpC6R0kDVS3tlVHqZvf$85Aapdj32CBMFy+TB3c/jOX+p30zy+nJPTq+nHOKmYM=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "4311",
+    "first_name": "hassan",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-18T17:59:26Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$qrnQGHfUQS7d1m6b30phZ2$ov1AFkG8usXBy6+xjtAowziOyZ1eYve4z8Zr+W/bf9c=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "manager",
+    "first_name": "",
+    "last_name": "",
+    "email": "xx9361224@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-18T18:22:13.454Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$oIinrLNDU3dMWvL7J8VfVu$YuN+DmqHWRzmm8ep+DR6K99kOMGfEak41uK2b/UT90Q=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "affairs",
+    "first_name": "",
+    "last_name": "",
+    "email": "affairs@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-18T18:23:39.723Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$FYiRzwIvqycz7suTIjrknJ$pPwmkMscPMqXKZdtdfYfaJxUlioB37ZxjyfKo/2khmQ=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "support",
+    "first_name": "",
+    "last_name": "",
+    "email": "support@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-18T18:25:40.661Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "complaints.role",
+  "pk": 1,
+  "fields": {
+    "name": "student"
+  }
+},
+{
+  "model": "complaints.role",
+  "pk": 3,
+  "fields": {
+    "name": "affairs"
+  }
+},
+{
+  "model": "complaints.role",
+  "pk": 4,
+  "fields": {
+    "name": "admin"
+  }
+},
+{
+  "model": "complaints.role",
+  "pk": 6,
+  "fields": {
+    "name": "support_offcier"
+  }
+},
+{
+  "model": "complaints.userrole",
+  "pk": 1,
+  "fields": {
+    "user": 2,
+    "role": 1
+  }
+},
+{
+  "model": "complaints.userrole",
+  "pk": 2,
+  "fields": {
+    "user": 3,
+    "role": 4
+  }
+},
+{
+  "model": "complaints.userrole",
+  "pk": 3,
+  "fields": {
+    "user": 4,
+    "role": 3
+  }
+},
+{
+  "model": "complaints.userrole",
+  "pk": 4,
+  "fields": {
+    "user": 5,
+    "role": 6
+  }
+},
+{
+  "model": "complaints.userprofile",
+  "pk": 1,
+  "fields": {
+    "user": 2,
+    "full_name": "hassan",
+    "student_number": "4311",
+    "staff_number": "",
+    "program": "",
+    "year_of_study": null,
+    "department": null
+  }
+},
+{
+  "model": "complaints.loginsecuritystate",
+  "pk": 1,
+  "fields": {
+    "username": "manager",
+    "role": "support_officer",
+    "failed_attempts": 1,
+    "failure_reason": "invalid_credentials",
+    "locked_until": null,
+    "last_failed_at": "2026-05-30T11:37:25.974Z",
+    "admin_notified_at": null,
+    "updated_at": "2026-05-30T11:37:25.974Z"
+  }
+},
+{
+  "model": "complaints.loginauditlog",
+  "pk": 1,
+  "fields": {
+    "username": "manager",
+    "role": "admin",
+    "event": "success",
+    "failure_reason": "",
+    "failed_attempts": 0,
+    "locked_until": null,
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "user": 3,
+    "created_at": "2026-05-30T11:35:33.276Z"
+  }
+},
+{
+  "model": "complaints.loginauditlog",
+  "pk": 2,
+  "fields": {
+    "username": "4311",
+    "role": "student",
+    "event": "success",
+    "failure_reason": "",
+    "failed_attempts": 0,
+    "locked_until": null,
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "user": 2,
+    "created_at": "2026-05-30T11:36:35.925Z"
+  }
+},
+{
+  "model": "complaints.loginauditlog",
+  "pk": 3,
+  "fields": {
+    "username": "manager",
+    "role": "support_officer",
+    "event": "failure",
+    "failure_reason": "invalid_credentials",
+    "failed_attempts": 1,
+    "locked_until": null,
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "user": null,
+    "created_at": "2026-05-30T11:37:25.982Z"
+  }
+},
+{
+  "model": "complaints.loginauditlog",
+  "pk": 4,
+  "fields": {
+    "username": "support",
+    "role": "support_officer",
+    "event": "success",
+    "failure_reason": "",
+    "failed_attempts": 0,
+    "locked_until": null,
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "user": 5,
+    "created_at": "2026-05-30T11:38:16.078Z"
+  }
+},
+{
+  "model": "complaints.loginauditlog",
+  "pk": 5,
+  "fields": {
+    "username": "affairs",
+    "role": "affairs",
+    "event": "success",
+    "failure_reason": "",
+    "failed_attempts": 0,
+    "locked_until": null,
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "user": 4,
+    "created_at": "2026-05-30T12:06:28.654Z"
+  }
+},
+{
+  "model": "complaints.loginauditlog",
+  "pk": 6,
+  "fields": {
+    "username": "manager",
+    "role": "admin",
+    "event": "success",
+    "failure_reason": "",
+    "failed_attempts": 0,
+    "locked_until": null,
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "user": 3,
+    "created_at": "2026-06-02T07:51:49.517Z"
+  }
+},
+{
+  "model": "complaints.loginauditlog",
+  "pk": 7,
+  "fields": {
+    "username": "4311",
+    "role": "student",
+    "event": "success",
+    "failure_reason": "",
+    "failed_attempts": 0,
+    "locked_until": null,
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "user": 2,
+    "created_at": "2026-06-02T07:58:14.734Z"
+  }
+},
+{
+  "model": "complaints.loginauditlog",
+  "pk": 8,
+  "fields": {
+    "username": "support",
+    "role": "support_officer",
+    "event": "success",
+    "failure_reason": "",
+    "failed_attempts": 0,
+    "locked_until": null,
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "user": 5,
+    "created_at": "2026-06-02T08:07:10.865Z"
+  }
+},
+{
+  "model": "complaints.loginauditlog",
+  "pk": 9,
+  "fields": {
+    "username": "affairs",
+    "role": "affairs",
+    "event": "success",
+    "failure_reason": "",
+    "failed_attempts": 0,
+    "locked_until": null,
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "user": 4,
+    "created_at": "2026-06-02T08:08:51.881Z"
+  }
+},
+{
+  "model": "complaints.loginauditlog",
+  "pk": 10,
+  "fields": {
+    "username": "4311",
+    "role": "student",
+    "event": "success",
+    "failure_reason": "",
+    "failed_attempts": 0,
+    "locked_until": null,
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "user": 2,
+    "created_at": "2026-06-02T09:42:23.732Z"
+  }
+},
+{
+  "model": "complaints.loginauditlog",
+  "pk": 11,
+  "fields": {
+    "username": "4311",
+    "role": "student",
+    "event": "success",
+    "failure_reason": "",
+    "failed_attempts": 0,
+    "locked_until": null,
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "user": 2,
+    "created_at": "2026-06-02T13:23:58.795Z"
+  }
+},
+{
+  "model": "complaints.loginauditlog",
+  "pk": 12,
+  "fields": {
+    "username": "manager",
+    "role": "admin",
+    "event": "success",
+    "failure_reason": "",
+    "failed_attempts": 0,
+    "locked_until": null,
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "user": 3,
+    "created_at": "2026-06-04T17:29:44.473Z"
+  }
+},
+{
+  "model": "complaints.loginauditlog",
+  "pk": 13,
+  "fields": {
+    "username": "support",
+    "role": "support_officer",
+    "event": "success",
+    "failure_reason": "",
+    "failed_attempts": 0,
+    "locked_until": null,
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "user": 5,
+    "created_at": "2026-06-04T17:29:58.613Z"
+  }
+},
+{
+  "model": "complaints.loginauditlog",
+  "pk": 14,
+  "fields": {
+    "username": "4311",
+    "role": "student",
+    "event": "success",
+    "failure_reason": "",
+    "failed_attempts": 0,
+    "locked_until": null,
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "user": 2,
+    "created_at": "2026-06-04T17:30:24.447Z"
+  }
+},
+{
+  "model": "complaints.loginauditlog",
+  "pk": 15,
+  "fields": {
+    "username": "affairs",
+    "role": "affairs",
+    "event": "success",
+    "failure_reason": "",
+    "failed_attempts": 0,
+    "locked_until": null,
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "user": 4,
+    "created_at": "2026-06-04T17:30:33.822Z"
+  }
+},
+{
+  "model": "complaints.complaintcategory",
+  "pk": 1,
+  "fields": {
+    "name": "Finance",
+    "description": "Auto-created from complaint submission.",
+    "department": null,
+    "active": true
+  }
+},
+{
+  "model": "complaints.complaintcategory",
+  "pk": 2,
+  "fields": {
+    "name": "Academics",
+    "description": "Auto-created from complaint submission.",
+    "department": null,
+    "active": true
+  }
+},
+{
+  "model": "complaints.complaintcategory",
+  "pk": 3,
+  "fields": {
+    "name": "Faculty",
+    "description": "Auto-created from complaint submission.",
+    "department": null,
+    "active": true
+  }
+},
+{
+  "model": "complaints.complaintsource",
+  "pk": 1,
+  "fields": {
+    "name": "Web"
+  }
+},
+{
+  "model": "complaints.complaintpriority",
+  "pk": 1,
+  "fields": {
+    "name": "Critical",
+    "description": ""
+  }
+},
+{
+  "model": "complaints.complaintpriority",
+  "pk": 2,
+  "fields": {
+    "name": "High",
+    "description": ""
+  }
+},
+{
+  "model": "complaints.complaintpriority",
+  "pk": 3,
+  "fields": {
+    "name": "Low",
+    "description": ""
+  }
+},
+{
+  "model": "complaints.complaintstatus",
+  "pk": 1,
+  "fields": {
+    "name": "Pending"
+  }
+},
+{
+  "model": "complaints.complaintstatus",
+  "pk": 2,
+  "fields": {
+    "name": "Closed"
+  }
+},
+{
+  "model": "complaints.complaintstatus",
+  "pk": 3,
+  "fields": {
+    "name": "Escalated"
+  }
+},
+{
+  "model": "complaints.complaint",
+  "pk": 2,
+  "fields": {
+    "complaint_code": "CMP-2026-000002",
+    "student": 2,
+    "submitted_by": 2,
+    "source": 1,
+    "category": 1,
+    "priority": 2,
+    "status": 3,
+    "title": "lacag mabixin karo",
+    "description": "simisterka haafkaan mabxi karo lacagta simisterka complete gadaal kabxiinaa imtixaanka yaana layga joojin waacodsi mahadsanidiin",
+    "original_text": "lacag mabixin karo simisterka haafkaan mabxi karo lacagta simisterka complete gadaal kabxiinaa imtixaanka yaana layga joojin waacodsi mahadsanidiin",
+    "translated_text": "translated to english: money mabixin karo simisterka haafkaan mabxi karo moneyta simisterka complete gadaal kabxiinaa examka yaana layga joojin waacodsi mahadsanidiin",
+    "detected_language": "somali",
+    "sentiment": "negative",
+    "urgency": "low",
+    "confidence_score": 0.6572,
+    "auto_priority": "High",
+    "created_at": "2026-05-19T07:16:03.993Z",
+    "updated_at": "2026-06-05T06:57:08.747Z",
+    "resolved_at": null
+  }
+},
+{
+  "model": "complaints.complaint",
+  "pk": 3,
+  "fields": {
+    "complaint_code": "CMP-2026-000003",
+    "student": 2,
+    "submitted_by": 2,
+    "source": 1,
+    "category": 3,
+    "priority": 3,
+    "status": 2,
+    "title": "reected teacher ali",
+    "description": "we dont need like teacher ustad ali because he slides are more hes explaination bad also we dont understand he didnt allow asking question if he allowed not answering our questions",
+    "original_text": "reected teacher ali we dont need like teacher ustad ali because he slides are more hes explaination bad also we dont understand he didnt allow asking question if he allowed not answering our questions",
+    "translated_text": "reected teacher ali we dont need like teacher ustad ali because he slides are more hes explaination bad also we dont understand he didnt allow asking question if he allowed not answering our questions",
+    "detected_language": "english",
+    "sentiment": "neutral",
+    "urgency": "low",
+    "confidence_score": 0.558,
+    "auto_priority": "Low",
+    "created_at": "2026-06-02T07:59:33.596Z",
+    "updated_at": "2026-06-02T08:16:47.279Z",
+    "resolved_at": "2026-06-02T08:16:47.278Z"
+  }
+},
+{
+  "model": "complaints.complainttransfer",
+  "pk": 1,
+  "fields": {
+    "complaint": 3,
+    "transferred_by": 4,
+    "transferred_to_user": null,
+    "transferred_to_role": 4,
+    "from_role": "affairs",
+    "reason": "Affairs verified this complaint and requests admin reflection.",
+    "status": "open",
+    "created_at": "2026-06-02T08:11:42.590Z"
+  }
+},
+{
+  "model": "complaints.complaintnote",
+  "pk": 1,
+  "fields": {
+    "complaint": 2,
+    "author": 4,
+    "note_type": "internal",
+    "note": "[AFFAIRS REVIEW] NEEDS MORE INVESTIGATION. Reviewed by Affairs.",
+    "created_at": "2026-05-19T10:26:47.790Z"
+  }
+},
+{
+  "model": "complaints.complaintnote",
+  "pk": 2,
+  "fields": {
+    "complaint": 2,
+    "author": 5,
+    "note_type": "internal",
+    "note": "[INVESTIGATION RESULT] true solve",
+    "created_at": "2026-05-19T10:38:16.768Z"
+  }
+},
+{
+  "model": "complaints.complaintnote",
+  "pk": 3,
+  "fields": {
+    "complaint": 2,
+    "author": 4,
+    "note_type": "internal",
+    "note": "[AFFAIRS REVIEW] TRUE. Reviewed by Affairs.",
+    "created_at": "2026-05-19T10:38:44.556Z"
+  }
+},
+{
+  "model": "complaints.complaintnote",
+  "pk": 4,
+  "fields": {
+    "complaint": 2,
+    "author": 4,
+    "note_type": "escalation",
+    "note": "[SEND TO ADMIN] Affairs verified this complaint and requests admin reflection.",
+    "created_at": "2026-05-19T10:38:49.138Z"
+  }
+},
+{
+  "model": "complaints.complaintnote",
+  "pk": 5,
+  "fields": {
+    "complaint": 2,
+    "author": 3,
+    "note_type": "response",
+    "note": "[ADMIN RESPONSE] waalaxaliyay aad umahadsantahay ardaygaas haloo ongolaado inuu galo imtixaankiisa",
+    "created_at": "2026-05-30T12:05:19.830Z"
+  }
+},
+{
+  "model": "complaints.complaintnote",
+  "pk": 6,
+  "fields": {
+    "complaint": 2,
+    "author": 4,
+    "note_type": "internal",
+    "note": "[AFFAIRS REVIEW] TRUE. Reviewed by Affairs.",
+    "created_at": "2026-05-30T12:09:28.422Z"
+  }
+},
+{
+  "model": "complaints.complaintnote",
+  "pk": 7,
+  "fields": {
+    "complaint": 2,
+    "author": 4,
+    "note_type": "internal",
+    "note": "[AFFAIRS REVIEW] TRUE. Reviewed by Affairs.",
+    "created_at": "2026-05-30T12:14:29.685Z"
+  }
+},
+{
+  "model": "complaints.complaintnote",
+  "pk": 8,
+  "fields": {
+    "complaint": 2,
+    "author": 4,
+    "note_type": "internal",
+    "note": "[AFFAIRS REVIEW] TRUE. Reviewed by Affairs.",
+    "created_at": "2026-05-30T12:17:34.318Z"
+  }
+},
+{
+  "model": "complaints.complaintnote",
+  "pk": 9,
+  "fields": {
+    "complaint": 2,
+    "author": 4,
+    "note_type": "internal",
+    "note": "[AFFAIRS REVIEW] NEEDS MORE INVESTIGATION. Reviewed by Affairs.",
+    "created_at": "2026-05-30T12:19:43.142Z"
+  }
+},
+{
+  "model": "complaints.complaintnote",
+  "pk": 11,
+  "fields": {
+    "complaint": 2,
+    "author": 4,
+    "note_type": "internal",
+    "note": "[AFFAIRS REVIEW] NEEDS MORE INVESTIGATION. Reviewed by Affairs.",
+    "created_at": "2026-05-30T12:24:27.118Z"
+  }
+},
+{
+  "model": "complaints.complaintnote",
+  "pk": 12,
+  "fields": {
+    "complaint": 2,
+    "author": 3,
+    "note_type": "internal",
+    "note": "[ADMIN INTERNAL] hello",
+    "created_at": "2026-06-02T07:56:52.115Z"
+  }
+},
+{
+  "model": "complaints.complaintnote",
+  "pk": 13,
+  "fields": {
+    "complaint": 3,
+    "author": 2,
+    "note_type": "internal",
+    "note": "[AUTO CATEGORY UPDATE] Finance -> Faculty.",
+    "created_at": "2026-06-02T08:03:15.564Z"
+  }
+},
+{
+  "model": "complaints.complaintnote",
+  "pk": 14,
+  "fields": {
+    "complaint": 3,
+    "author": 5,
+    "note_type": "internal",
+    "note": "[INVESTIGATION RESULT] we invitagtated yes some are true but still we can remove",
+    "created_at": "2026-06-02T08:08:03.807Z"
+  }
+},
+{
+  "model": "complaints.complaintnote",
+  "pk": 15,
+  "fields": {
+    "complaint": 3,
+    "author": 4,
+    "note_type": "internal",
+    "note": "[AFFAIRS REVIEW] NEEDS MORE INVESTIGATION. Reviewed by Affairs.",
+    "created_at": "2026-06-02T08:10:51.749Z"
+  }
+},
+{
+  "model": "complaints.complaintnote",
+  "pk": 16,
+  "fields": {
+    "complaint": 3,
+    "author": 4,
+    "note_type": "internal",
+    "note": "[AFFAIRS REVIEW] TRUE. Reviewed by Affairs.",
+    "created_at": "2026-06-02T08:11:33.650Z"
+  }
+},
+{
+  "model": "complaints.complaintnote",
+  "pk": 17,
+  "fields": {
+    "complaint": 3,
+    "author": 4,
+    "note_type": "escalation",
+    "note": "[SEND TO ADMIN] Affairs verified this complaint and requests admin reflection.",
+    "created_at": "2026-06-02T08:11:42.645Z"
+  }
+},
+{
+  "model": "complaints.complaintnote",
+  "pk": 18,
+  "fields": {
+    "complaint": 3,
+    "author": 3,
+    "note_type": "response",
+    "note": "[ADMIN RESPONSE] totaly wecant but in the next simsiter will go that thanks for applyng this complaint but this simsiter wecant remove that teacher but we will talk  if another complaint comming from him we will remove",
+    "created_at": "2026-06-02T08:16:19.175Z"
+  }
+},
+{
+  "model": "complaints.complaintnote",
+  "pk": 19,
+  "fields": {
+    "complaint": 3,
+    "author": 2,
+    "note_type": "response",
+    "note": "[STUDENT FEEDBACK] Rating 3/5. ok thanks but if he can changed our university lost their student statification we need changes thanks",
+    "created_at": "2026-06-02T08:31:39.771Z"
+  }
+},
+{
+  "model": "complaints.complaintnote",
+  "pk": 20,
+  "fields": {
+    "complaint": 3,
+    "author": 2,
+    "note_type": "response",
+    "note": "[STUDENT FEEDBACK] Rating 5/5. ok thanks but if he can changed our university lost their student statification we need changes thanks",
+    "created_at": "2026-06-02T08:32:28.207Z"
+  }
+},
+{
+  "model": "complaints.complaintnote",
+  "pk": 21,
+  "fields": {
+    "complaint": 3,
+    "author": 2,
+    "note_type": "response",
+    "note": "[STUDENT FEEDBACK] Rating 3/5. ok thanks but if he can changed our university lost their student statification we need changes thanks",
+    "created_at": "2026-06-02T08:33:02.511Z"
+  }
+},
+{
+  "model": "complaints.complaintnote",
+  "pk": 22,
+  "fields": {
+    "complaint": 2,
+    "author": 2,
+    "note_type": "response",
+    "note": "[STUDENT FEEDBACK] Rating 5/5. thanks soo much",
+    "created_at": "2026-06-02T08:33:34.662Z"
+  }
+},
+{
+  "model": "complaints.complaintnote",
+  "pk": 23,
+  "fields": {
+    "complaint": 2,
+    "author": 2,
+    "note_type": "response",
+    "note": "[STUDENT FEEDBACK] Rating 4/5. thanks soo much",
+    "created_at": "2026-06-02T08:34:09.887Z"
+  }
+},
+{
+  "model": "complaints.complaintnote",
+  "pk": 24,
+  "fields": {
+    "complaint": 2,
+    "author": 2,
+    "note_type": "response",
+    "note": "[STUDENT FEEDBACK] Rating 5/5. thanks soo much",
+    "created_at": "2026-06-02T08:38:32.651Z"
+  }
+},
+{
+  "model": "complaints.complaintnote",
+  "pk": 25,
+  "fields": {
+    "complaint": 2,
+    "author": 2,
+    "note_type": "escalation",
+    "note": "[SLA ESCALATION] Automatically escalated because the SLA deadline passed.",
+    "created_at": "2026-06-05T06:57:08.872Z"
+  }
+},
+{
+  "model": "complaints.complaintstatushistory",
+  "pk": 2,
+  "fields": {
+    "complaint": 2,
+    "status": 1,
+    "changed_by": 2,
+    "changed_at": "2026-05-19T07:16:04.004Z",
+    "note": "Created"
+  }
+},
+{
+  "model": "complaints.complaintstatushistory",
+  "pk": 3,
+  "fields": {
+    "complaint": 3,
+    "status": 1,
+    "changed_by": 2,
+    "changed_at": "2026-06-02T07:59:33.643Z",
+    "note": "Created"
+  }
+},
+{
+  "model": "complaints.complaintstatushistory",
+  "pk": 4,
+  "fields": {
+    "complaint": 3,
+    "status": 2,
+    "changed_by": 3,
+    "changed_at": "2026-06-02T08:16:47.284Z",
+    "note": "totaly wecant but in the next simsiter will go that thanks for applyng this complaint but this simsiter wecant remove that teacher but we will talk  if another complaint comming from him we will remove"
+  }
+},
+{
+  "model": "complaints.complaintstatushistory",
+  "pk": 5,
+  "fields": {
+    "complaint": 2,
+    "status": 3,
+    "changed_by": 2,
+    "changed_at": "2026-06-05T06:57:08.836Z",
+    "note": "Automatically escalated because the SLA deadline passed."
+  }
+},
+{
+  "model": "complaints.complaintfeedback",
+  "pk": 1,
+  "fields": {
+    "complaint": 3,
+    "student": 2,
+    "rating": 3,
+    "comment": "ok thanks but if he can changed our university lost their student statification we need changes thanks",
+    "created_at": "2026-06-02T08:31:36.646Z",
+    "updated_at": "2026-06-02T08:32:59.384Z"
+  }
+},
+{
+  "model": "complaints.complaintfeedback",
+  "pk": 2,
+  "fields": {
+    "complaint": 2,
+    "student": 2,
+    "rating": 5,
+    "comment": "thanks soo much",
+    "created_at": "2026-06-02T08:33:31.295Z",
+    "updated_at": "2026-06-02T08:38:29.520Z"
+  }
+},
+{
+  "model": "complaints.notification",
+  "pk": 1,
+  "fields": {
+    "recipient": 2,
+    "type": "admin_response",
+    "channel": "in_app",
+    "payload": {
+      "title": "lacag mabixin karo",
+      "message": "Admin has responded to your escalated complaint CMP-2026-000002.",
+      "complaint_id": 2,
+      "complaint_code": "CMP-2026-000002"
+    },
+    "is_read": true,
+    "created_at": "2026-05-30T12:05:19.836Z"
+  }
+},
+{
+  "model": "complaints.notification",
+  "pk": 2,
+  "fields": {
+    "recipient": 4,
+    "type": "admin_response",
+    "channel": "in_app",
+    "payload": {
+      "title": "lacag mabixin karo",
+      "message": "Admin has responded to escalated complaint CMP-2026-000002.",
+      "complaint_id": 2,
+      "complaint_code": "CMP-2026-000002"
+    },
+    "is_read": true,
+    "created_at": "2026-05-30T12:05:19.846Z"
+  }
+},
+{
+  "model": "complaints.notification",
+  "pk": 8,
+  "fields": {
+    "recipient": 2,
+    "type": "complaint_created",
+    "channel": "in_app",
+    "payload": {
+      "title": "reected teacher ali",
+      "message": "Your complaint CMP-2026-000003 was submitted successfully.",
+      "complaint_id": 3,
+      "complaint_code": "CMP-2026-000003"
+    },
+    "is_read": true,
+    "created_at": "2026-06-02T07:59:33.705Z"
+  }
+},
+{
+  "model": "complaints.notification",
+  "pk": 9,
+  "fields": {
+    "recipient": 4,
+    "type": "complaint_created",
+    "channel": "in_app",
+    "payload": {
+      "title": "reected teacher ali",
+      "message": "A new complaint CMP-2026-000003 has been submitted.",
+      "complaint_id": 3,
+      "complaint_code": "CMP-2026-000003"
+    },
+    "is_read": true,
+    "created_at": "2026-06-02T07:59:33.720Z"
+  }
+},
+{
+  "model": "complaints.notification",
+  "pk": 10,
+  "fields": {
+    "recipient": 4,
+    "type": "investigation_submitted",
+    "channel": "in_app",
+    "payload": {
+      "title": "reected teacher ali",
+      "message": "Support officer has submitted investigation result for CMP-2026-000003.",
+      "complaint_id": 3,
+      "complaint_code": "CMP-2026-000003"
+    },
+    "is_read": true,
+    "created_at": "2026-06-02T08:08:03.815Z"
+  }
+},
+{
+  "model": "complaints.notification",
+  "pk": 11,
+  "fields": {
+    "recipient": 2,
+    "type": "affairs_review",
+    "channel": "in_app",
+    "payload": {
+      "title": "reected teacher ali",
+      "message": "Your complaint CMP-2026-000003 review update: Needs More Investigation.",
+      "complaint_id": 3,
+      "complaint_code": "CMP-2026-000003"
+    },
+    "is_read": true,
+    "created_at": "2026-06-02T08:10:51.762Z"
+  }
+},
+{
+  "model": "complaints.notification",
+  "pk": 12,
+  "fields": {
+    "recipient": 2,
+    "type": "affairs_review",
+    "channel": "in_app",
+    "payload": {
+      "title": "reected teacher ali",
+      "message": "Your complaint CMP-2026-000003 review update: Approved.",
+      "complaint_id": 3,
+      "complaint_code": "CMP-2026-000003"
+    },
+    "is_read": true,
+    "created_at": "2026-06-02T08:11:33.657Z"
+  }
+},
+{
+  "model": "complaints.notification",
+  "pk": 13,
+  "fields": {
+    "recipient": 3,
+    "type": "complaint_transferred",
+    "channel": "in_app",
+    "payload": {
+      "title": "reected teacher ali",
+      "message": "Complaint CMP-2026-000003 was transferred to you.",
+      "complaint_id": 3,
+      "complaint_code": "CMP-2026-000003"
+    },
+    "is_read": true,
+    "created_at": "2026-06-02T08:11:42.648Z"
+  }
+},
+{
+  "model": "complaints.notification",
+  "pk": 14,
+  "fields": {
+    "recipient": 2,
+    "type": "complaint_transferred",
+    "channel": "in_app",
+    "payload": {
+      "title": "reected teacher ali",
+      "message": "Your complaint CMP-2026-000003 was transferred for higher-level review.",
+      "complaint_id": 3,
+      "complaint_code": "CMP-2026-000003"
+    },
+    "is_read": true,
+    "created_at": "2026-06-02T08:11:46.278Z"
+  }
+},
+{
+  "model": "complaints.notification",
+  "pk": 15,
+  "fields": {
+    "recipient": 2,
+    "type": "admin_response",
+    "channel": "in_app",
+    "payload": {
+      "title": "reected teacher ali",
+      "message": "Admin has responded to your escalated complaint CMP-2026-000003.",
+      "complaint_id": 3,
+      "complaint_code": "CMP-2026-000003"
+    },
+    "is_read": true,
+    "created_at": "2026-06-02T08:16:19.179Z"
+  }
+},
+{
+  "model": "complaints.notification",
+  "pk": 16,
+  "fields": {
+    "recipient": 4,
+    "type": "admin_response",
+    "channel": "in_app",
+    "payload": {
+      "title": "reected teacher ali",
+      "message": "Admin has responded to escalated complaint CMP-2026-000003.",
+      "complaint_id": 3,
+      "complaint_code": "CMP-2026-000003"
+    },
+    "is_read": true,
+    "created_at": "2026-06-02T08:16:19.185Z"
+  }
+},
+{
+  "model": "complaints.notification",
+  "pk": 17,
+  "fields": {
+    "recipient": 2,
+    "type": "status_changed",
+    "channel": "in_app",
+    "payload": {
+      "title": "reected teacher ali",
+      "message": "The status of your complaint CMP-2026-000003 has been changed to 'Closed'.",
+      "complaint_id": 3,
+      "complaint_code": "CMP-2026-000003"
+    },
+    "is_read": true,
+    "created_at": "2026-06-02T08:16:47.287Z"
+  }
+},
+{
+  "model": "complaints.notification",
+  "pk": 18,
+  "fields": {
+    "recipient": 3,
+    "type": "complaint_feedback",
+    "channel": "in_app",
+    "payload": {
+      "title": "reected teacher ali",
+      "rating": 3,
+      "message": "Student rated complaint CMP-2026-000003 3/5.",
+      "complaint_id": 3,
+      "complaint_code": "CMP-2026-000003"
+    },
+    "is_read": true,
+    "created_at": "2026-06-02T08:31:36.657Z"
+  }
+},
+{
+  "model": "complaints.notification",
+  "pk": 19,
+  "fields": {
+    "recipient": 3,
+    "type": "complaint_feedback",
+    "channel": "in_app",
+    "payload": {
+      "title": "reected teacher ali",
+      "rating": 5,
+      "message": "Student rated complaint CMP-2026-000003 5/5.",
+      "complaint_id": 3,
+      "complaint_code": "CMP-2026-000003"
+    },
+    "is_read": true,
+    "created_at": "2026-06-02T08:32:25.222Z"
+  }
+},
+{
+  "model": "complaints.notification",
+  "pk": 20,
+  "fields": {
+    "recipient": 3,
+    "type": "complaint_feedback",
+    "channel": "in_app",
+    "payload": {
+      "title": "reected teacher ali",
+      "rating": 3,
+      "message": "Student rated complaint CMP-2026-000003 3/5.",
+      "complaint_id": 3,
+      "complaint_code": "CMP-2026-000003"
+    },
+    "is_read": true,
+    "created_at": "2026-06-02T08:32:59.390Z"
+  }
+},
+{
+  "model": "complaints.notification",
+  "pk": 21,
+  "fields": {
+    "recipient": 3,
+    "type": "complaint_feedback",
+    "channel": "in_app",
+    "payload": {
+      "title": "lacag mabixin karo",
+      "rating": 5,
+      "message": "Student rated complaint CMP-2026-000002 5/5.",
+      "complaint_id": 2,
+      "complaint_code": "CMP-2026-000002"
+    },
+    "is_read": true,
+    "created_at": "2026-06-02T08:33:31.300Z"
+  }
+},
+{
+  "model": "complaints.notification",
+  "pk": 22,
+  "fields": {
+    "recipient": 3,
+    "type": "complaint_feedback",
+    "channel": "in_app",
+    "payload": {
+      "title": "lacag mabixin karo",
+      "rating": 4,
+      "message": "Student rated complaint CMP-2026-000002 4/5.",
+      "complaint_id": 2,
+      "complaint_code": "CMP-2026-000002"
+    },
+    "is_read": true,
+    "created_at": "2026-06-02T08:34:06.439Z"
+  }
+},
+{
+  "model": "complaints.notification",
+  "pk": 23,
+  "fields": {
+    "recipient": 3,
+    "type": "complaint_feedback",
+    "channel": "in_app",
+    "payload": {
+      "title": "lacag mabixin karo",
+      "rating": 5,
+      "message": "Student rated complaint CMP-2026-000002 5/5.",
+      "complaint_id": 2,
+      "complaint_code": "CMP-2026-000002"
+    },
+    "is_read": true,
+    "created_at": "2026-06-02T08:38:29.525Z"
+  }
+},
+{
+  "model": "complaints.notification",
+  "pk": 24,
+  "fields": {
+    "recipient": 3,
+    "type": "sla_escalation",
+    "channel": "in_app",
+    "payload": {
+      "title": "lacag mabixin karo",
+      "message": "Complaint CMP-2026-000002 is overdue and was escalated automatically.",
+      "complaint_id": 2,
+      "complaint_code": "CMP-2026-000002"
+    },
+    "is_read": false,
+    "created_at": "2026-06-05T06:57:08.907Z"
+  }
+},
+{
+  "model": "complaints.notification",
+  "pk": 25,
+  "fields": {
+    "recipient": 4,
+    "type": "sla_escalation",
+    "channel": "in_app",
+    "payload": {
+      "title": "lacag mabixin karo",
+      "message": "Complaint CMP-2026-000002 is overdue and was escalated automatically.",
+      "complaint_id": 2,
+      "complaint_code": "CMP-2026-000002"
+    },
+    "is_read": false,
+    "created_at": "2026-06-05T06:57:09.679Z"
+  }
+},
+{
+  "model": "complaints.complaintaianalysis",
+  "pk": 2,
+  "fields": {
+    "complaint": 2,
+    "predicted_category": 1,
+    "predicted_priority": 2,
+    "routing_department": null,
+    "confidence": 0.6572,
+    "model_version": "heuristic-v1",
+    "processed_at": "2026-05-19T07:16:04.007Z",
+    "raw_output": {
+      "urgency": "low",
+      "sentiment": "negative",
+      "auto_priority": "High",
+      "model_version": "heuristic-v1",
+      "original_text": "lacag mabixin karo simisterka haafkaan mabxi karo lacagta simisterka complete gadaal kabxiinaa imtixaanka yaana layga joojin waacodsi mahadsanidiin",
+      "translated_text": "translated to english: money mabixin karo simisterka haafkaan mabxi karo moneyta simisterka complete gadaal kabxiinaa examka yaana layga joojin waacodsi mahadsanidiin",
+      "attachment_count": 0,
+      "confidence_score": 0.6572,
+      "matched_keywords": [],
+      "detected_language": "somali",
+      "suggested_category": "Finance"
+    }
+  }
+},
+{
+  "model": "complaints.complaintaianalysis",
+  "pk": 3,
+  "fields": {
+    "complaint": 3,
+    "predicted_category": 3,
+    "predicted_priority": 3,
+    "routing_department": null,
+    "confidence": 0.558,
+    "model_version": "heuristic-v1",
+    "processed_at": "2026-06-02T07:59:33.651Z",
+    "raw_output": {
+      "urgency": "low",
+      "sentiment": "neutral",
+      "auto_priority": "Low",
+      "model_version": "heuristic-v1",
+      "original_text": "reected teacher ali we dont need like teacher ustad ali because he slides are more hes explaination bad also we dont understand he didnt allow asking question if he allowed not answering our questions",
+      "translated_text": "reected teacher ali we dont need like teacher ustad ali because he slides are more hes explaination bad also we dont understand he didnt allow asking question if he allowed not answering our questions",
+      "attachment_count": 0,
+      "confidence_score": 0.558,
+      "matched_keywords": [],
+      "detected_language": "english",
+      "suggested_category": "Faculty"
+    }
+  }
+},
+{
+  "model": "complaints.complaintaianalysis",
+  "pk": 4,
+  "fields": {
+    "complaint": 3,
+    "predicted_category": 3,
+    "predicted_priority": 3,
+    "routing_department": null,
+    "confidence": 0.558,
+    "model_version": "heuristic-v1",
+    "processed_at": "2026-06-02T08:03:15.559Z",
+    "raw_output": {
+      "urgency": "low",
+      "sentiment": "neutral",
+      "auto_priority": "Low",
+      "model_version": "heuristic-v1",
+      "original_text": "reected teacher ali we dont need like teacher ustad ali because he slides are more hes explaination bad also we dont understand he didnt allow asking question if he allowed not answering our questions",
+      "translated_text": "reected teacher ali we dont need like teacher ustad ali because he slides are more hes explaination bad also we dont understand he didnt allow asking question if he allowed not answering our questions",
+      "attachment_count": 0,
+      "confidence_score": 0.558,
+      "matched_keywords": [],
+      "detected_language": "english",
+      "suggested_category": "Faculty"
+    }
+  }
+}
+]

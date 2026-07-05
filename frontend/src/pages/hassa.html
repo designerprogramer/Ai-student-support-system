@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hormuud University | Student Complaint System</title>
+  <!-- Simple, normal UI/UX — no AI-style gradients, glassmorphism, or excessive shadows/borders -->
+  <style>
+    /* RESET & BASE — clean, traditional approach */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #ffffff;
+      color: #1e1e2f;
+      line-height: 1.4;
+    }
+
+    /* Normal container max-width */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Clean links */
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Utility buttons (no fancy shadows) */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #126e4a;
+      color: white;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 40px;
+      transition: background-color 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      background-color: #0e5a3c;
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: transparent;
+      border: 1px solid #cbd5e1;
+      color: #1e293b;
+      font-weight: 500;
+      padding: 12px 28px;
+      border-radius: 40px;
+      transition: background-color 0.2s, border-color 0.2s;
+    }
+    .btn-outline:hover {
+      background-color: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    /* Simple card style — no glass, no gradients */
+    .card {
+      background: #ffffff;
+      border: 1px solid #e9eef3;
+      border-radius: 20px;
+      padding: 24px;
+      transition: all 0.2s ease;
+    }
+    .card:hover {
+      border-color: #cbd5e1;
+      background-color: #fefefe;
+    }
+
+    /* Stats card */
+    .stat-card {
+      background: #ffffff;
+      border: 1px solid #eef2f6;
+      border-radius: 24px;
+      padding: 32px 16px;
+      text-align: center;
+    }
+
+    /* Workflow step item */
+    .workflow-step {
+      background: #ffffff;
+      border: 1px solid #eef2f8;
+      border-radius: 28px;
+      padding: 28px;
+    }
+
+    /* Simple footer style */
+    footer {
+      border-top: 1px solid #eef2f8;
+      margin-top: 64px;
+      padding: 48px 0 32px;
+    }
+
+    /* Hero background — normal solid color with minimal noise pattern? No gradient, just solid dark greenish */
+    .hero {
+      background-color: #0f2c24;
+      color: white;
+      padding: 120px 0 80px;
+    }
+
+    /* No weird AI blurs or glows */
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    h2 {
+      font-size: 2.25rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    /* Normal spacing */
+    .section {
+      padding: 80px 0;
+    }
+    .section-sm {
+      padding: 56px 0;
+    }
+
+    .text-green {
+      color: #126e4a;
+    }
+    .bg-soft-green {
+      background-color: #f6fbf9;
+    }
+
+    /* Very simple nav */
+    .navbar {
+      position: fixed;
+      top: 16px;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 0 24px;
+    }
+    .nav-inner {
+      background: white;
+      border: 1px solid #eef2f8;
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-img {
+      width: 40px;
+      height: 40px;
+      background-color: #126e4a;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #2d3a48;
+    }
+    .nav-links a:hover {
+      color: #126e4a;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 1.8rem; }
+      .hero { padding: 100px 0 60px; }
+      .section { padding: 48px 0; }
+    }
+
+    /* Simple icon placeholders (using unicode / inline svg) no heroicons here — clean */
+    .icon-bg {
+      background-color: #eef2fa;
+      border-radius: 16px;
+      width: 52px;
+      height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .icon-svg {
+      width: 26px;
+      height: 26px;
+      color: #126e4a;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 32px;
+    }
+    .grid-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 700px) {
+      .grid-stats { grid-template-columns: 1fr; gap: 16px; }
+    }
+
+    /* Workflow timeline */
+    .workflow-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .step-item {
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+    }
+    .step-badge {
+      min-width: 70px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #126e4a;
+    }
+    .step-content {
+      flex: 1;
+      border-left: 2px solid #e2e8f0;
+      padding-left: 28px;
+      padding-bottom: 24px;
+    }
+    .step-content:last-child {
+      border-left: 2px solid transparent;
+    }
+    .step-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #126e4a;
+      background: #eaf9f2;
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 30px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin: 32px 0 24px;
+    }
+    .social-icons a {
+      color: #5c6f87;
+      font-size: 1.5rem;
+      transition: color 0.2s;
+    }
+    .social-icons a:hover {
+      color: #126e4a;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Fixed Navbar (normal, no gradient/shadow madness) -->
+<div class="navbar">
+  <div class="nav-inner">
+    <div class="logo-area">
+      <div class="logo-img">HU</div>
+      <div>
+        <div style="font-weight: 700; font-size: 1rem; line-height: 1.2;">Hormuud University</div>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#how-it-works">How It Works</a>
+      <a href="#features">Features</a>
+      <a href="#track">Track Complaint</a>
+      <a href="#" class="btn-primary" style="padding: 8px 20px;">Login</a>
+    </div>
+  </div>
+</div>
+
+<!-- Hero Section (matches normal design, no AI classmorphism) -->
+<section class="hero">
+  <div class="container" style="text-align: center;">
+    <h1 style="margin-bottom: 20px;">Send your complaint.<br><span style="color: #4ade80;">Track the solution.</span></h1>
+    <p style="font-size: 1.2rem; max-width: 680px; margin: 0 auto 32px; opacity: 0.85; line-height: 1.5;">
+      Share your complaint, concern, or suggestion in Somali or English. Your message is safely delivered to the right team, followed step by step, and handled with respect until resolution.
+    </p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="#" class="btn-primary" style="background-color: #2ecc71; color: #0f2c24;">Send Your Complaint →</a>
+      <a href="#" class="btn-outline" style="border-color: #cbd5e1; color: white; border-color: rgba(255,255,255,0.4); background: transparent;">Track Existing Case</a>
+    </div>
+    <p style="margin-top: 32px; font-size: 0.85rem; opacity: 0.7;">You can write freely. We’ll guide your message to the right place.</p>
+  </div>
+</section>
+
+<!-- Main content area (white background, no glass) -->
+<main>
+
+  <!-- Stats Section (simple counters, animated with vanilla JS) -->
+  <div class="container section-sm" style="padding-top: 48px;">
+    <div class="grid-stats" id="statsContainer">
+      <div class="stat-card">
+        <div style="font-size: 2.8rem; font-weight: 700; color: #126e4a;" id="complaintsCount">0</div>
+        <div style="margin-top: 8px; color: #4a5a6e;">Complaints Submitted</div>
+      </div>
+      <div class="stat-card">
+        <div style="font-size: 2.8rem; font-weight: 700; color: #126e4a;" id="resolvedCount">0</div>
+        <div style="margin-top: 8px; color: #4a5a6e;">Complaints Resolved</div>
+      </div>
+      <div class="stat-card">
+        <div style="font-size: 2.8rem; font-weight: 700; color: #126e4a;" id="satisfactionCount">0</div>
+        <div style="margin-top: 8px; color: #4a5a6e;">Student Satisfaction</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS (section, no timeline with weird gradients, uses clean left border) -->
+  <div id="how-it-works" class="bg-soft-green" style="padding: 80px 0;">
+    <div class="container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto 48px;">
+        <span style="color: #126e4a; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem;">How It Works</span>
+        <h2 style="margin-top: 12px;">From complaint submission to resolution</h2>
+        <p style="margin-top: 16px; color: #3a4c62;">A clear student journey that shows how every complaint moves through the system.</p>
+      </div>
+
+      <div class="workflow-grid" id="workflowSteps">
+        <!-- steps dynamically via JS? but we can hardcode with normal semantics -->
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURES section (clean cards without glass) -->
+  <div id="features" class="container section" style="padding: 72px 0;">
+    <div style="text-align: center; max-width: 720px; margin: 0 auto 56px;">
+      <span style="color: #126e4a; font-weight: 600; letter-spacing: 2px;">Features</span>
+      <h2 style="margin: 12px 0 16px;">Tools designed for student complaint management</h2>
+      <p style="color: #475569;">Manage, track, and resolve student complaints faster with a clear digital workflow for students, departments, and administrators.</p>
+    </div>
+    <div class="grid-3" id="featuresGrid"></div>
+  </div>
+
+  <!-- CTA Box (no gradients, solid bg) -->
+  <div class="container" style="margin-bottom: 48px;">
+    <div style="background-color: #126e4a; border-radius: 32px; padding: 56px 32px; text-align: center; color: white;">
+      <h3 style="color: white; font-size: 1.8rem;">Ready to submit or track a student complaint?</h3>
+      <p style="margin: 16px auto 32px; max-width: 500px; opacity: 0.9;">Login with your university account to submit a complaint and follow its progress until it is resolved.</p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="#" style="background-color: white; color: #126e4a; padding: 12px 32px; border-radius: 40px; font-weight: 600;">Login to Submit</a>
+        <a href="#" style="border: 1px solid rgba(255,255,255,0.5); padding: 12px 32px; border-radius: 40px;">Track Complaint</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER (normal) -->
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a href="#how-it-works">How It Works</a>
+      <a href="#features">Features</a>
+      <a href="#">Track Complaint</a>
+      <a href="#">Complaint Policy</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+    <div class="social-icons">
+      <a href="#">📘</a>
+      <a href="#">📷</a>
+      <a href="#">🐦</a>
+      <a href="#">🐙</a>
+      <a href="#">▶️</a>
+    </div>
+    <div style="text-align: center; color: #7c8ba0; font-size: 0.85rem; border-top: 1px solid #eef2f8; padding-top: 32px;">
+      © 2026 Hormuud University. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ------------------------------------------------------------------
+  // NORMAL UI/UX: No Classmorphism or "AI gradient/shadow borders"
+  // Clean data population similar to original hero section but without 
+  // overengineered tailwind shadows. Simple, robust.
+  // ------------------------------------------------------------------
+
+  // Stats with increment animation (target values)
+  const targetStats = {
+    complaints: 1248,
+    resolved: 1123,
+    satisfaction: 94
+  };
+
+  let currentStats = { complaints: 0, resolved: 0, satisfaction: 0 };
+  const steps = 40;
+  let stepCounter = 0;
+
+  const complaintsSpan = document.getElementById('complaintsCount');
+  const resolvedSpan = document.getElementById('resolvedCount');
+  const satisfactionSpan = document.getElementById('satisfactionCount');
+
+  function animateStats() {
+    if (stepCounter >= steps) {
+      complaintsSpan.innerText = targetStats.complaints + '+';
+      resolvedSpan.innerText = targetStats.resolved + '+';
+      satisfactionSpan.innerText = targetStats.satisfaction + '%';
+      return;
+    }
+    stepCounter++;
+    const progress = stepCounter / steps;
+    currentStats.complaints = Math.floor(targetStats.complaints * progress);
+    currentStats.resolved = Math.floor(targetStats.resolved * progress);
+    currentStats.satisfaction = Math.floor(targetStats.satisfaction * progress);
+    complaintsSpan.innerText = currentStats.complaints + '+';
+    resolvedSpan.innerText = currentStats.resolved + '+';
+    satisfactionSpan.innerText = currentStats.satisfaction + '%';
+    requestAnimationFrame(() => setTimeout(animateStats, 24));
+  }
+  animateStats();
+
+  // Data similar to React component but static for pure HTML/JS (normal design)
+  const workflowStepsData = [
+    { step: '01', title: 'Login', desc: 'Student logs in securely using university ID and password.', tag: 'Authentication' },
+    { step: '02', title: 'Submit Complaint', desc: 'Student writes the complaint and chooses a category like Academic, Facilities, Administration.', tag: 'Student Action' },
+    { step: '03', title: 'Department Review', desc: 'The responsible office receives, checks, and processes the complaint.', tag: 'Office Review' },
+    { step: '04', title: 'Track Status', desc: 'Student follows the complaint status: Pending, In Progress, Escalated, Resolved.', tag: 'Live Tracking' },
+    { step: '05', title: 'Resolved', desc: 'The complaint is completed and the final result is recorded.', tag: 'Final Stage' }
+  ];
+
+  const featuresData = [
+    { title: 'Role Based Access', desc: 'Separate access for students, departments, and admins.' },
+    { title: 'Smart Categorization', desc: 'Complaints organized by category, priority, and source.' },
+    { title: 'Status Updates', desc: 'Students follow complaint progress from submission to resolution.' },
+    { title: 'Reports Dashboard', desc: 'Admins view complaint statistics and resolution progress.' },
+    { title: 'Complaint Tracking', desc: 'Each complaint has a unique code for easy tracking.' },
+    { title: 'Accessible Platform', desc: 'Submit and track complaints from anywhere.' }
+  ];
+
+  // Render Workflow steps (clean timeline with left border, no fancy shadows)
+  const workflowContainer = document.getElementById('workflowSteps');
+  if (workflowContainer) {
+    workflowStepsData.forEach((item, idx) => {
+      const stepDiv = document.createElement('div');
+      stepDiv.className = 'step-item';
+      stepDiv.innerHTML = `
+        <div class="step-badge">${item.step}</div>
+        <div class="step-content">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 12px;">
+            <h3 style="font-size: 1.35rem; font-weight: 600;">${item.title}</h3>
+            <span class="step-tag">${item.tag}</span>
+          </div>
+          <p style="color: #415a77; line-height: 1.5;">${item.desc}</p>
+        </div>
+      `;
+      workflowContainer.appendChild(stepDiv);
+    });
+  }
+
+  // Render Features (standard cards, no glows)
+  const featuresGrid = document.getElementById('featuresGrid');
+  if (featuresGrid) {
+    featuresData.forEach(feat => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      // Icons as simple SVG / emoji not using heroicons but normal approach
+      card.innerHTML = `
+        <div class="icon-bg">
+          <svg class="icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          </svg>
+        </div>
+        <h3 style="font-size: 1.35rem; font-weight: 600; margin-bottom: 12px;">${feat.title}</h3>
+        <p style="color: #5a687c; line-height: 1.5;">${feat.desc}</p>
+      `;
+      featuresGrid.appendChild(card);
+    });
+  }
+
+  // Additional simple dynamic categories display mock (similar to hero concept but not mandatory)
+  // Compliant with "same idea attractive design" but without extra AI/custom gradient backgrounds
+  // We can add a little footer note to confirm the approach.
+
+  // Mobile menu adjustment: no extra classmorphism
+  console.log('Landing page with normal UI/UX — no AI gradients, no heavy shadows/borders, no glassmorphism');
+</script>
+
+<!-- Additional minor style to ensure "hero" feeling consistent with rest sections -->
+<style>
+  /* ensure consistent roundness, no extreme border radius inconsistencies */
+  .card, .stat-card, .workflow-step, .step-content, .nav-inner, .btn-primary, .btn-outline {
+    border-radius: 20px;
+  }
+  .stat-card {
+    border-radius: 24px;
+  }
+  .step-content {
+    border-left: 2px solid #e2e8f0;
+  }
+  .hero {
+    background-color: #0f2c24;
+  }
+  .bg-soft-green {
+    background-color: #fafcfb;
+  }
+  /* remove any fancy backdrop blur, keep pure */
+  .nav-inner {
+    backdrop-filter: none;
+    box-shadow: none;
+    border: 1px solid #eceff5;
+  }
+  /* no gradient shadows on any element */
+  * {
+    box-shadow: none;
+    text-shadow: none;
+  }
+  /* normal borders, clean */
+  .stat-card, .card {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    transition: all 0.2s;
+  }
+  .card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+    transform: translateY(-2px);
+  }
+  .stat-card:hover {
+    border-color: #cbdde9;
+  }
+  h1, h2, h3 {
+    letter-spacing: -0.01em;
+  }
+  .step-tag {
+    background-color: #eef6f0;
+  }
+  .icon-bg {
+    background: #edf3f8;
+  }
+  /* No AI weirdness */
+  a {
+    text-decoration: none;
+  }
+</style>
+
+</body>
+</html>
