@@ -16,7 +16,8 @@ import {
   LockClosedIcon,
   PencilSquareIcon,
   BuildingOffice2Icon,
-  SignalIcon
+  SignalIcon,
+  ChevronDownIcon
 } from '@heroicons/react/24/outline'
 
 import {
@@ -32,9 +33,33 @@ const BRAND = {
   blue: '#3b82f6'
 }
 
+const FAQs_LIST = [
+  {
+    question: "Who can submit a complaint or suggestion?",
+    answer: "Any currently enrolled student at Hormuud University can submit complaints, feedback, or suggestions using their official student credentials."
+  },
+  {
+    question: "How can I track the status of my complaint?",
+    answer: "After submitting, you can track the status of your complaint on the 'Track Complaint' page using the unique tracking code or by logging in to your student dashboard."
+  },
+  {
+    question: "How long does it take to get a response?",
+    answer: "Most complaints are reviewed within 24–48 hours by the respective department. Depending on the complexity and priority, resolution may take 3–7 business days."
+  },
+  {
+    question: "Is my complaint private and secure?",
+    answer: "Yes, all submissions are treated with high confidentiality. Only authorized staff and department heads assigned to resolve your specific case have access to your details."
+  },
+  {
+    question: "Can I edit or cancel my complaint after submitting?",
+    answer: "Once a complaint is submitted and is being processed, it cannot be edited directly. However, you can add comments or request to cancel it from your tracking page."
+  }
+]
+
 export default function ProgrammeHero() {
   const heroRef = useRef(null)
   const [isNavScrolled, setIsNavScrolled] = useState(false)
+  const [openFaqIndex, setOpenFaqIndex] = useState(null)
   const [landingData, setLandingData] = useState({
     statuses: ['Pending', 'In Progress', 'Escalated', 'Resolved'],
     priorities: ['Low', 'Medium', 'High', 'Critical'],
@@ -285,6 +310,13 @@ export default function ProgrammeHero() {
               Features
             </a>
 
+            <a
+              href="#faqs"
+              className={`transition ${isNavScrolled ? 'hover:text-emerald-600' : 'hover:text-white'}`}
+            >
+              FAQs
+            </a>
+
             <Link
               to="/student/complaints"
               className={`transition ${isNavScrolled ? 'hover:text-emerald-600' : 'hover:text-white'}`}
@@ -358,40 +390,9 @@ export default function ProgrammeHero() {
       </section>
 
       {/* LIGHT CONTENT */}
-      <div className="relative z-10 bg-white">
+      <div className="relative z-10 bg-white pt-16">
         <div className="mx-auto max-w-6xl px-6 pb-20">
-          {/* STATS */}
-          <div className="-mt-12 grid grid-cols-1 overflow-hidden rounded-2xl border border-gray-200 bg-white md:grid-cols-3 animate-fade-in-up animate-delay-300 shadow-soft">
-            <div className="landing-stat border-b border-gray-200 py-8 text-center md:border-b-0 md:border-r">
-              <div className="text-4xl font-semibold text-gray-900">
-                {stats.complaints}+
-              </div>
-
-              <div className="mt-2 text-sm font-medium text-gray-600">
-                Complaints Submitted
-              </div>
-            </div>
-
-            <div className="landing-stat border-b border-gray-200 py-8 text-center md:border-b-0 md:border-r">
-              <div className="text-4xl font-semibold text-gray-900">
-                {stats.resolved}+
-              </div>
-
-              <div className="mt-2 text-sm font-medium text-gray-600">
-                Complaints Resolved
-              </div>
-            </div>
-
-            <div className="landing-stat py-8 text-center">
-              <div className="text-4xl font-semibold text-gray-900">
-                {stats.satisfaction}%
-              </div>
-
-              <div className="mt-2 text-sm font-medium text-gray-600">
-                Student Satisfaction
-              </div>
-            </div>
-          </div>
+         
 
           {/* HOW IT WORKS */}
           <div id="how-it-works" className="mt-20">
@@ -515,7 +516,7 @@ export default function ProgrammeHero() {
                 return (
                   <div
                     key={index}
-                    className="reveal-on-scroll landing-card border-r border-b border-gray-200 bg-white p-7 transition-colors hover:bg-slate-50"
+                    className="reveal-on-scroll border-r border-b border-gray-200 bg-white p-7"
                     style={{ transitionDelay: `${index * 55}ms` }}
                   >
                     <div className="mb-6 flex h-11 w-11 items-center justify-center rounded-lg border border-gray-200">
@@ -529,6 +530,60 @@ export default function ProgrammeHero() {
                     <p className="mt-3 text-sm leading-relaxed text-gray-700">
                       {feature.desc}
                     </p>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+
+          {/* FAQS */}
+          <div id="faqs" className="mt-24">
+            <div className="reveal-on-scroll mb-12 grid gap-6 border-b border-gray-200 pb-10 md:grid-cols-[0.55fr_1fr] md:items-end">
+              <p className="text-sm font-semibold uppercase tracking-[3px] text-emerald-600">
+                FAQ
+              </p>
+
+              <div>
+                <h2 className="text-3xl font-semibold leading-tight text-gray-900 md:text-4xl">
+                  Frequently Asked Questions
+                </h2>
+
+                <p className="mt-4 max-w-2xl text-base leading-7 text-gray-700">
+                  Quick answers to common questions about the Student Support System,
+                  submitting complaints, and tracking resolutions.
+                </p>
+              </div>
+            </div>
+
+            <div className="mx-auto max-w-4xl divide-y divide-gray-200">
+              {FAQs_LIST.map((faq, index) => {
+                const isOpen = openFaqIndex === index
+                return (
+                  <div
+                    key={index}
+                    className="reveal-on-scroll py-6 first:pt-0 last:pb-0"
+                    style={{ transitionDelay: `${index * 50}ms` }}
+                  >
+                    <button
+                      onClick={() => setOpenFaqIndex(isOpen ? null : index)}
+                      className="flex w-full items-center justify-between text-left font-semibold text-gray-900 transition hover:text-emerald-600 py-2 focus:outline-none"
+                    >
+                      <span className="text-lg md:text-xl pr-4">{faq.question}</span>
+                      <ChevronDownIcon
+                        className={`h-5 w-5 flex-shrink-0 text-gray-500 transition-transform duration-350 ${
+                          isOpen ? 'rotate-180 text-emerald-600' : ''
+                        }`}
+                      />
+                    </button>
+                    <div
+                      className={`overflow-hidden transition-all duration-350 ease-in-out ${
+                        isOpen ? 'max-h-40 mt-3 opacity-100' : 'max-h-0 opacity-0'
+                      }`}
+                    >
+                      <p className="text-base leading-7 text-gray-600">
+                        {faq.answer}
+                      </p>
+                    </div>
                   </div>
                 )
               })}
@@ -580,6 +635,10 @@ export default function ProgrammeHero() {
 
                 <a href="#features" className="transition hover:text-emerald-600">
                   Features
+                </a>
+
+                <a href="#faqs" className="transition hover:text-emerald-600">
+                  FAQs
                 </a>
 
                 <Link to="/student/complaints" className="transition hover:text-emerald-600">

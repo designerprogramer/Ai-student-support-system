@@ -17,12 +17,12 @@ import { fetchNotifications } from '../lib/complaintWorkflow'
 
 const ROLE_THEMES = {
   admin: {
-    color: '#4f46e5', // Indigo
-    bgSoft: 'bg-indigo-50/55',
-    textActive: 'text-indigo-600',
-    bgActive: 'bg-indigo-50',
-    borderActive: 'bg-indigo-600',
-    hover: 'hover:bg-indigo-50/50 hover:text-indigo-600',
+    color: '#138154', // Brand green
+    bgSoft: 'bg-[#138154]/5',
+    textActive: 'text-[#138154]',
+    bgActive: 'bg-[#138154]/5',
+    borderActive: 'bg-[#138154]',
+    hover: 'hover:bg-[#138154]/5 hover:text-[#138154]',
     label: 'Administrator'
   },
   affairs: {
