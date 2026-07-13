@@ -347,3 +347,5 @@ Base URL: `/api/`
 4. **Admin**:
    - Accesses control center at `/admin/dashboard`.
    - Oversees system metrics, department settings, user configurations, and audit security logs.
+#   A I - p o w e r e d _ s t u d e n t _ s u p p o r t _ s y s t e m  
+ 
